@@ -30,7 +30,7 @@ public class Calculator {
 	 * @return (int) The cumulative total
 	 */
 	public int getTotal() {
-		return 0;
+		return total;
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class Calculator {
 	 *            The value to add to the total
 	 */
 	public void add(int value) {
-
+		total += value;
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class Calculator {
 	 *            The value to subtract from the total
 	 */
 	public void subtract(int value) {
-
+		total -= value;
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class Calculator {
 	 *            The value to multiply the total by
 	 */
 	public void multiply(int value) {
-
+		total *= value;
 	}
 
 	/**
@@ -70,7 +70,10 @@ public class Calculator {
 	 *            The value to divide the total by
 	 */
 	public void divide(int value) {
-
+		if (value == 0)
+			total = 0;
+		else
+			total /= value;
 	}
 
 	/**
