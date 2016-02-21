@@ -5,7 +5,6 @@
  * history() method. 
  * 
  * @author Miguel Deniz Lopez     PIN: 301     CSE360 Spring 2016
- * 
  */
 
 package cse360assign3;
