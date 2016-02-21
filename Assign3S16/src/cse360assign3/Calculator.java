@@ -12,6 +12,7 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String actionHistory;
 
 	/**
 	 * Creates a Calculator object that can perform 4 arithmetic operations:
@@ -22,6 +23,7 @@ public class Calculator {
 	 */
 	public Calculator() {
 		total = 0; // not needed - included for clarity
+		actionHistory = "0";
 	}
 
 	/**
@@ -41,6 +43,7 @@ public class Calculator {
 	 */
 	public void add(int value) {
 		total += value;
+		actionHistory += " + " + value;
 	}
 
 	/**
@@ -51,6 +54,7 @@ public class Calculator {
 	 */
 	public void subtract(int value) {
 		total -= value;
+		actionHistory += " - " + value;
 	}
 
 	/**
@@ -61,6 +65,7 @@ public class Calculator {
 	 */
 	public void multiply(int value) {
 		total *= value;
+		actionHistory += " * " + value;
 	}
 
 	/**
@@ -74,6 +79,8 @@ public class Calculator {
 			total = 0;
 		else
 			total /= value;
+		
+		actionHistory += " / " + value;
 	}
 
 	/**
@@ -83,6 +90,6 @@ public class Calculator {
 	 *         performed
 	 */
 	public String getHistory() {
-		return "";
+		return actionHistory;
 	}
 }

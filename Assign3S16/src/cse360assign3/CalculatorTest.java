@@ -11,7 +11,7 @@ public class CalculatorTest {
 		Calculator calc = new Calculator();
 		assertNotNull(calc);
 		assertEquals(0, calc.getTotal());
-		assertEquals("", calc.getHistory());
+		assertEquals("0", calc.getHistory());
 	}
 
 	@Test
@@ -114,7 +114,20 @@ public class CalculatorTest {
 
 	@Test
 	public void testGetHistory() {
-		fail("Not yet implemented");
+		Calculator calc = new Calculator();
+		assertEquals("0", calc.getHistory());
+		calc.add(5);
+		calc.subtract(5);
+		calc.multiply(2);
+		calc.divide(4);
+		assertEquals("0 + 5 - 5 * 2 / 4", calc.getHistory());
+		
+		calc.add(-5);
+		calc.subtract(-5);
+		calc.multiply(-2);
+		calc.divide(0);
+		calc.divide(-1);
+		assertEquals("0 + 5 - 5 * 2 / 4 + -5 - -5 * -2 / 0 / -1", calc.getHistory());
 	}
 
 }
